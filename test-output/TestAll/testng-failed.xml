@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestAll]">
+  <test name="testService">
+    <classes>
+      <class name="it.bt.com.testcases.TC_01_001_Registration_New_User"/>
+    </classes>
+  </test> <!-- testService -->
+  <test name="testService(failed)">
+    <classes>
+      <class name="it.bt.com.testcases.TC_01_001_Registration_New_User">
+        <methods>
+          <include name="TC_001_Registration_New_User"/>
+          <include name="SetupEnv"/>
+        </methods>
+      </class> <!-- it.bt.com.testcases.TC_01_001_Registration_New_User -->
+    </classes>
+  </test> <!-- testService(failed) -->
+</suite> <!-- Failed suite [TestAll] -->
