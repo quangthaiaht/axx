@@ -133,19 +133,19 @@ public class Utilities {
 
 				subject = msg.getSubject();
 				body = msg.getContent().toString();
-				switch (subject) {
-				case "ACWeb portal, new user activation":
-					System.out.println("...Found '" + subject + "' [English]...");
-					TemporaryPassword = getPassword_EN(body);
-					break;
-				case "ACWeb portail, nouvelle activation par l'utilisateur":
-					System.out.println("...Found '" + subject + "' [French]...");
-					TemporaryPassword = getPassword_FN(body);
-					break;
-				default:
-					System.out.println("...Not found '" + subject + "'...");
-					break;
-				}
+//				switch (subject) {
+//				case "ACWeb portal, new user activation":
+//					System.out.println("...Found '" + subject + "' [English]...");
+//					TemporaryPassword = getPassword_EN(body);
+//					break;
+//				case "ACWeb portail, nouvelle activation par l'utilisateur":
+//					System.out.println("...Found '" + subject + "' [French]...");
+//					TemporaryPassword = getPassword_FN(body);
+//					break;
+//				default:
+//					System.out.println("...Not found '" + subject + "'...");
+//					break;
+//				}
 				if (!TemporaryPassword.isEmpty())
 					break;
 			}
