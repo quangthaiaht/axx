@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<suite name="TestAll">
-  <test name="testService">
-    <classes>
-       <class name="it.bt.com.testcases.TC_01_001_Registration_New_User"/>
-   </classes>
- </test>
- </suite>
