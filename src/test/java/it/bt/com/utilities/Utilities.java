@@ -133,6 +133,7 @@ public class Utilities {
 
 				subject = msg.getSubject();
 				body = msg.getContent().toString();
+				System.out.println("ooko");
 //				switch (subject) {
 //				case "ACWeb portal, new user activation":
 //					System.out.println("...Found '" + subject + "' [English]...");
