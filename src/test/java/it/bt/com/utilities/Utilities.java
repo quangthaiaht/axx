@@ -53,6 +53,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+
 import com.sun.mail.imap.IMAPFolder;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -133,7 +134,6 @@ public class Utilities {
 
 				subject = msg.getSubject();
 				body = msg.getContent().toString();
-				System.out.println("ooko");
 //				switch (subject) {
 //				case "ACWeb portal, new user activation":
 //					System.out.println("...Found '" + subject + "' [English]...");
@@ -941,6 +941,22 @@ public class Utilities {
 		
 		return text;
     }
-	
+//	public static String getPw(String apiKey) throws IOException, MailosaurException{
+//		String host = "10.225.3.1";
+//	    String port = "3128";
+//	    System.out.println("Using proxy: " + host + ":" + port);
+//	    System.setProperty("http.proxyHost", host);
+//	    System.setProperty("http.proxyPort", port);
+//	    System.setProperty("http.nonProxyHosts", "localhost|127.0.0.1");
+//		String pw = "";
+//		
+//		MailosaurClient client = new MailosaurClient(apiKey);
+//
+//		ServerListResult result = client.servers().list();
+//
+//		System.out.println(result.items().get(0).name());
+//		
+//		return pw;
+//	}
 	
 }

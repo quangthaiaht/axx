@@ -24,8 +24,14 @@ public class EnvironmentParameters {
 	private String ExcelApp;
 	private ArrayList<String> PLANT;
 	private ArrayList<String> Passpartout_Service;
+	private String deviceName;
+	private String platformName;
+	private String appPackage;
+	private String appActivity;
+	private String app;
 	private String accessKey;
 	private String userName;
+	private String deviceOrientation;
 	
 	
 
@@ -45,7 +51,53 @@ public class EnvironmentParameters {
 		this.userName = userName;
 	}
 
-	
+	public String getDeviceOrientation() {
+		return deviceOrientation;
+	}
+
+	public void setDeviceOrientation(String deviceOrientation) {
+		this.deviceOrientation = deviceOrientation;
+	}
+
+	public String getDeviceName() {
+		return deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+	}
+
+	public String getPlatformName() {
+		return platformName;
+	}
+
+	public void setPlatformName(String platformName) {
+		this.platformName = platformName;
+	}
+
+	public String getAppPackage() {
+		return appPackage;
+	}
+
+	public void setAppPackage(String appPackage) {
+		this.appPackage = appPackage;
+	}
+
+	public String getAppActivity() {
+		return appActivity;
+	}
+
+	public void setAppActivity(String appActivity) {
+		this.appActivity = appActivity;
+	}
+
+	public String getApp() {
+		return app;
+	}
+
+	public void setApp(String app) {
+		this.app = app;
+	}
 
 	public String getACWEB_ENDPOINT_URL() {
 		return ACWEB_ENDPOINT_URL;

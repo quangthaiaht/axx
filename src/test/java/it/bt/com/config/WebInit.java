@@ -167,7 +167,6 @@ public class WebInit {
 					String key = (String) e.nextElement();
 					String value = prop.getProperty(key);
 					System.out.println(key + " = " + value);
-					caps.setCapability("browserName","");
 					if ("endpointUrl".equals(key))
 						envParams.setACWEB_ENDPOINT_URL(value);
 					if ("implicitlyWait".equals(key))
@@ -204,17 +203,17 @@ public class WebInit {
 						envParams.setNotepadApp(value);
 					if ("excelApp".equals(key))
 						envParams.setExcelApp(value);
-					if ("deviceName".equals(key))
-						caps.setCapability(key,value);
-					if ("deviceOrientation".equals(key))
-						caps.setCapability(key,value);
-					if ("platformName".equals(key))
-						caps.setCapability(key,value);
-					if ("platformVersion".equals(key))
+					if ("appActivity".equals(key))
 						caps.setCapability(key,value);
 					if ("appPackage".equals(key))
 						caps.setCapability(key,value);
-					if("appActivity".equals(key))
+					if ("appActivity".equals(key))
+						caps.setCapability(key,value);
+					if ("platformName".equals(key))
+						caps.setCapability(key,value);
+					if ("deviceName".equals(key))
+						caps.setCapability(key,value);
+					if("app".equals(key))
 						caps.setCapability(key,value);
 					if("username".equals(key))
 						envParams.setUserName(value);
@@ -224,22 +223,6 @@ public class WebInit {
 						caps.setCapability(key,value);
 					if("platformVersion".equals(key))
 						caps.setCapability(key,value);
-					if("deviceName".equals(key))
-						caps.setCapability(key,value);
-					if("app".equals(key))
-						caps.setCapability(key,value);
-					if("platformVersion".equals(key))
-						caps.setCapability(key,value);
-					if("platformVersion".equals(key))
-						caps.setCapability(key,value);
-					if("platformVersion".equals(key))
-						caps.setCapability(key,value);
-					if("platformVersion".equals(key))
-						caps.setCapability(key,value);
-					if("platformVersion".equals(key))
-						caps.setCapability(key,value);
-						
-					
 				}
 			}
 		} catch (IOException ex) {
@@ -289,9 +272,16 @@ public class WebInit {
 	
 	protected void Init() throws IOException {
 		File file = new File("");
-		
+		String host = "10.225.3.1";
+		String port = "3128";
+		System.out.println("Using proxy: " + host + ":" + port);
+		System.setProperty("http.proxyHost", host);
+		System.setProperty("http.proxyPort", port);
+		System.setProperty("http.nonProxyHosts", "localhost|127.0.0.1");
 		this.LoadEnvironment(file.getAbsoluteFile()+"/env/envsaucelabs.properties");
-		
+		String saucelabsUrl = "http://"+ envParams.getUserName() + ":" + envParams.getAccessKey() + "@ondemand.saucelabs.com:80/wd/hub";
+		String username = System.getenv("BROWSERSTACK_USERNAME");
+		String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
 		Properties properties = new Properties();
 		
 		this.LoadUserProfile(envParams.getACWEB_USER_PROFILE1(), userProfile1);
@@ -302,7 +292,7 @@ public class WebInit {
 		this.LoadPlantConfigFile(envParams.getPlantConfig());
 		if(caps.getCapability("platformName").equals("Android"))
 		{
-			   driver = new AndroidDriver(new URL("http://"+envParams.getUserName()+":"+envParams.getAccessKey()+"@ondemand.saucelabs.com:80/wd/hub"), caps);
+			driver = new AndroidDriver(new URL("https://" + username + ":" + accessKey + "@hub.browserstack.com/wd/hub"), caps);
 		}
 		
 //			System.out.println("::: Open Browser");
